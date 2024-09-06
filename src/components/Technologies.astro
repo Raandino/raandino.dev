@@ -1,0 +1,112 @@
+---
+import TailwindIcon from "./icons/Tailwind.astro";
+import NextJSIcon from "./icons/NextJS.astro";
+import VueIcon from "./icons/Vue.astro"
+import HTMLIcon from "./icons/HTML.astro";
+import CSSIcon from "./icons/CSS.astro";
+import JavaScript from "./icons/JavaScript.astro";
+import TypeScript from "./icons/TypeScript.astro";
+import Nuxt from "./icons/Nuxt.astro";
+import Vite from "./icons/Vite.astro";
+import Node from "./icons/Node.astro";
+import Git from "./icons/Git.astro";
+import Figma from "./icons/Figma.astro";
+import React from "./icons/React.astro";
+
+enum TechnologyType {
+  Frontend = 1,
+  Backend = 2,
+  Database = 3,
+  Other = 4,
+}
+const TECHNOLOGIES = [
+  {
+    name: 'JavaScript',
+    icon: JavaScript,
+    colorClasses: ' bg-yellow-300/10',
+    type: TechnologyType.Frontend
+  },
+  {
+    name: 'HTML',
+    icon: HTMLIcon,
+    colorClasses: 'bg-orange-500/10',
+    type: TechnologyType.Frontend
+  },
+  {
+    name: 'CSS',
+    icon: CSSIcon,
+    colorClasses: ' bg-blue-300/10',
+    type: TechnologyType.Frontend
+  },
+  {
+    name: "Tailwind",
+    icon: TailwindIcon,
+    colorClasses: " bg-blue-500/10",
+    type: TechnologyType.Frontend,
+  },
+  {
+    name: "VueJS",
+    icon: VueIcon,
+    colorClasses: "bg-[#41B883]/10 ",
+    type: TechnologyType.Frontend,
+  },
+  {
+    name: "TypeScript",
+    icon: TypeScript,
+    colorClasses: "bg-blue-500/10 ",
+    type: TechnologyType.Frontend,
+  },
+  {
+    name: "Nuxt",
+    icon: Nuxt,
+    colorClasses: "bg-[#41B883]/10 ",
+    type: TechnologyType.Frontend,
+  },
+  {
+    name: "Vite",
+    icon: Vite,
+    colorClasses: "bg-[#BD34FE]/10 ",
+    type: TechnologyType.Frontend,
+  },
+  {
+    name: "Node",
+    icon: Node,
+    colorClasses: "bg-[#41873F]/10 ",
+    type: TechnologyType.Backend,
+  },
+  {
+    name: "Git",
+    icon: Git,
+    colorClasses: "bg-[#DE4C36]/10 ",
+    type: TechnologyType.Backend,
+  },
+  {
+    name: "Figma",
+    icon: Figma,
+    colorClasses: "bg-[#A259FF]/10 ",
+    type: TechnologyType.Other,
+  },
+  {
+    name: "React",
+    icon: React,
+    colorClasses: "bg-[#1ABCFE]/10 ",
+    type: TechnologyType.Frontend,
+  },
+
+];
+---
+
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+  {
+    TECHNOLOGIES.map((technology) => (
+      <div
+        class={`flex flex-col items-center justify-center p-4 transition-all duration-300 ${technology.colorClasses} hover:scale-110 rounded-lg shadow-md`}
+      >
+        <technology.icon className="size-12" />
+        <span class="mt-2 text-sm font-semibold text-white">
+          {technology.name}
+        </span>
+      </div>
+    ))
+  }
+</div>

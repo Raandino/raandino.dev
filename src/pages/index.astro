@@ -12,6 +12,7 @@ import SectionContainer from "@/components/SectionContainer.astro"
 import Hero from "@/components/Hero.astro"
 import TitleSection from "@/components/TitleSection.astro"
 import experience from '../experience.json'
+import Technologies from "@/components/Technologies.astro"
 
 
 
@@ -59,6 +60,17 @@ import experience from '../experience.json'
       </TitleSection>
       <AboutMe />
     </SectionContainer>
+
+    <SectionContainer id="Tecnologias">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <CodeIcon class="size-7" />
+        Technologies
+      </h2>
+      <Technologies />
+    </SectionContainer>
+    
   </div>
   </main>
 </Layout>
