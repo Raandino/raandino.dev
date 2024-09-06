@@ -1,0 +1,42 @@
+{
+    "work_experience": [
+      {
+        "date": "February 2024 - Present",
+        "title": "Web Developer",
+        "company": "Güil Mobility Ventures",
+        "description": "Supporting early-stage startups in achieving traction through innovative technology solutions. Developing web applications using React, Vue.js, TypeScript, Node.js, HTML, CSS, and Google Cloud Platform, focused on creating seamless user experiences and optimizing performance.",
+        "link": "https://guilventures.com"
+      },
+      {
+        "date": "August 2022 - February 2024",
+        "title": "Web Developer",
+        "company": "OOQIA",
+        "description": "Collaborated with backend developers and designers to optimize usability and define data structures. Improved mobile functionalities and API endpoints using Tailwind CSS, enhancing user experience and performance.",
+        "link": "https://ooqia.com/"
+      },
+      {
+        "date": "September 2021 - August 2022",
+        "title": "Web Developer",
+        "company": "Olly Olly",
+        "description": "Developed high-quality WordPress themes for industry clients. Managed the development and support for over 1,000 clients, creating WordPress themes used by 300+ clients, and maintaining the codebase of these themes.",
+        "link": "https://www.ollyolly.com/"
+      }
+    ],
+    "volunteering": [
+      {
+        "date": "July 2023 - Present",
+        "title": "Global Shaper",
+        "company": "Global Shapers Community",
+        "description": "Managing and collaborating on social impact projects that promote community development and sustainability. Engaging with local stakeholders and building partnerships to create long-lasting positive change.",
+        "link": "https://www.globalshapers.org/"
+      },
+      {
+        "date": "July 2023 - Present",
+        "title": "GDG Organizer",
+        "company": "Google Developer Groups Managua",
+        "description": "Helping plan and coordinate events, including annual DevFest. Producing and managing video content for the YouTube channel and supporting Women Techmakers by organizing events and content creation to promote inclusivity in tech.",
+        "link": "https://gdg.community.dev/gdg-managua/"
+      }
+    ]
+  }
+  

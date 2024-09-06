@@ -1,0 +1,106 @@
+---
+import GitHub from "./icons/GitHub.astro"
+import HTML from "./icons/HTML.astro"
+import CSS from "./icons/CSS.astro"
+import Vue from "./icons/Vue.astro"
+import Link from "./icons/Link.astro"
+import LinkButton from "./LinkButton.astro"
+
+const TAGS = {
+  VUEJS: {
+    name: "Vuejs",
+    class: "bg-[#41B883]/10 text-white",
+    icon: Vue,
+  },
+  HTML: {
+    name: "HTML",
+    class: "bg-[#e34f26]/10 text-white",
+    icon: HTML,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-[#0c73b8]/10 text-white",
+    icon: CSS,
+  },
+}
+const PROJECTS = [
+  {
+    title: "Darte Media Studio - 2022",
+    description:
+      "Darte Media Studio is a voice and dubbing studio based in the US, specializing in managing a vast network of local and international composers, actors, directors, and translators. The website, created from scratch using vue.js, and serves as a hub for their extensive voice-over and dubbing services.",
+    link: "https://dartemediastudios.com/home",
+    github: "",
+    image: "/projects/dartemedia.webp",
+    tags: [TAGS.VUEJS],
+  },
+  {
+  title: "3C Studio - 2020",
+  description: "3C Studio is a comprehensive agency based in Managua, Nicaragua, specializing in strategic communication and project execution. They offer services in corporate culture, social marketing, brand analysis, and event management. The studio collaborates closely with clients to deliver impactful solutions in audiovisual production, marketing activations, and social responsibility initiatives. Their projects aim to strengthen institutional presence and execute successful corporate events.",
+  github: "https://github.com/Raandino/3c-studio",
+  image: "/projects/3cstudio.webp",
+  tags: [TAGS.CSS, TAGS.HTML],
+}
+  // {
+  //   title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+  //   description:
+  //     "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
+  //   link: "https://adventjs.dev",
+  //   image: "/projects/adventjs.webp",
+  //   tags: [TAGS.NEXT, TAGS.TAILWIND],
+  // },
+]
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+  <div class="w-full md:w-1/2">
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+    </div>
+  </div>
+
+  <div class="w-full md:w-1/2 md:max-w-lg">
+    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+      {title}
+    </h3>
+    <div class="flex flex-wrap mt-2">
+      <ul class="flex flex-row mb-2 gap-x-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+      <footer class="flex items-end justify-start mt-4 gap-x-4">
+          {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-6" />
+              Code
+              
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <Link class="size-4" />
+              Preview
+            </LinkButton>
+          )}
+        </footer>
+    </div>
+  </div>
+</article>
+    ))
+  }
+</div>
+
+
+

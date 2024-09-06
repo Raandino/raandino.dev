@@ -1,0 +1,28 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+interface Props {
+	EXPERIENCE:
+   {
+    date: string;
+    title: string;
+    company: string;
+    description: string;
+    link: string;
+   }[]
+  
+
+}
+const { EXPERIENCE } = Astro.props
+
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
