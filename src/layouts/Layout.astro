@@ -11,6 +11,12 @@ interface Props {
 }
 
 const { description, title } = Astro.props
+import Hotjar from '@hotjar/browser';
+
+const siteId = 5126444;
+const hotjarVersion = 6;
+
+Hotjar.init(siteId, hotjarVersion);
 ---
 
 <!doctype html>
@@ -24,6 +30,7 @@ const { description, title } = Astro.props
     <meta property="og:image" content="/og.webp" />
     <title>{title}</title>
     <ViewTransitions />
+    
   </head>
 
   <body class="relative text-black dark:text-white">
