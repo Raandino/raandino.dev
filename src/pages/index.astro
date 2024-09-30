@@ -1,45 +1,43 @@
 ---
-import Layout from "@/layouts/Layout.astro"
+import Layout from "@/layouts/Layout.astro";
 
-import AboutMe from "@/components/AboutMe.astro"
-import Briefcase from "@/components/icons/Briefcase.astro"
-import Community from "@/components/icons/Community.astro"
-import CodeIcon from "@/components/icons/Code.astro"
-import Experience from "@/components/Experience.astro"
-import ProfileCheck from "@/components/icons/ProfileCheck.astro"
-import Projects from "@/components/Projects.astro"
-import SectionContainer from "@/components/SectionContainer.astro"
-import Hero from "@/components/Hero.astro"
-import TitleSection from "@/components/TitleSection.astro"
-import experience from '../experience.json'
-import Technologies from "@/components/Technologies.astro"
-
+import AboutMe from "@/components/AboutMe.astro";
+import Briefcase from "@/components/icons/Briefcase.astro";
+import Community from "@/components/icons/Community.astro";
+import CodeIcon from "@/components/icons/Code.astro";
+import Experience from "@/components/Experience.astro";
+import ProfileCheck from "@/components/icons/ProfileCheck.astro";
+import Projects from "@/components/Projects.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Hero from "@/components/Hero.astro";
+import TitleSection from "@/components/TitleSection.astro";
+import experience from "../experience.json";
+import Technologies from "@/components/Technologies.astro";
 ---
 
 <Layout
-  title="Rodolfo Andino's Portfolio - Web Developer with 3 Years of Experience"
+  title="Rodolfo Andino's Portfolio - Web Developer with 4 Years of Experience"
   description="Hire Rodolfo to build your web application. Web Developer and Content Creator. Specialized in creating unique interfaces."
 >
   <main class="px-4">
     <SectionContainer class="py-16 md:py-36">
-      <Hero>
-      </slot>
-    </Hero>
+      <Hero />
     </SectionContainer>
-    <div class="space-y-24">
+  </main>
+  <div class="space-y-24">
     <SectionContainer id="experiencia">
       <TitleSection>
         <Briefcase class="size-8" />
         Work Experience
       </TitleSection>
-      <Experience EXPERIENCE={experience.work_experience}/>
+      <Experience EXPERIENCE={experience.work_experience} />
     </SectionContainer>
     <SectionContainer id="experiencia">
       <TitleSection>
         <Community class="size-8" />
         Volunteering
       </TitleSection>
-      <Experience EXPERIENCE={experience.volunteering}/>
+      <Experience EXPERIENCE={experience.volunteering} />
     </SectionContainer>
 
     <SectionContainer id="proyectos">
@@ -67,7 +65,5 @@ import Technologies from "@/components/Technologies.astro"
       </h2>
       <Technologies />
     </SectionContainer>
-    
   </div>
-  </main>
 </Layout>
