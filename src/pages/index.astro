@@ -30,7 +30,12 @@ import Technologies from "@/components/Technologies.astro";
         <Briefcase class="size-8" />
         Work Experience
       </TitleSection>
-      <Experience EXPERIENCE={experience.work_experience} />
+      <Experience
+        EXPERIENCE={experience.work_experience.map((exp) => ({
+          ...exp,
+          link: exp.link || "",
+        }))}
+      />
     </SectionContainer>
     <SectionContainer id="experiencia">
       <TitleSection>
