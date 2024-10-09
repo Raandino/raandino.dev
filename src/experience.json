@@ -1,42 +1,53 @@
 {
-    "work_experience": [
-      {
-        "date": "February 2024 - Present",
-        "title": "Web Developer | Product Engineer",
-        "company": "Güil Mobility Ventures",
-        "description": "Supporting early-stage startups in achieving traction through innovative technology solutions. Developing web applications using React, Vue.js, TypeScript, Node.js, HTML, CSS, and Google Cloud Platform, focused on creating seamless user experiences and optimizing performance.",
-        "link": "https://guilventures.com"
-      },
-      {
-        "date": "August 2022 - February 2024",
-        "title": "Web Developer",
-        "company": "OOQIA",
-        "description": "Collaborated with backend developers and designers to optimize usability and define data structures. Improved mobile functionalities and API endpoints using Tailwind CSS, enhancing user experience and performance.",
-        "link": "https://ooqia.com/"
-      },
-      {
-        "date": "September 2021 - August 2022",
-        "title": "Web Developer",
-        "company": "Olly Olly",
-        "description": "Developed high-quality WordPress themes for industry clients. Managed the development and support for over 1,000 clients, creating WordPress themes used by 300+ clients, and maintaining the codebase of these themes.",
-        "link": "https://www.ollyolly.com/"
-      }
-    ],
-    "volunteering": [
-      {
-        "date": "July 2023 - Present",
-        "title": "Global Shaper",
-        "company": "Global Shapers Community",
-        "description": "Managing and collaborating on social impact projects that promote community development and sustainability. Engaging with local stakeholders and building partnerships to create long-lasting positive change.",
-        "link": "https://www.globalshapers.org/"
-      },
-      {
-        "date": "July 2023 - Present",
-        "title": "GDG Organizer",
-        "company": "Google Developer Groups Managua",
-        "description": "Helping plan and coordinate events, including annual DevFest. Producing and managing video content for the YouTube channel and supporting Women Techmakers by organizing events and content creation to promote inclusivity in tech.",
-        "link": "https://gdg.community.dev/gdg-managua/"
-      }
-    ]
-  }
-  
+  "work_experience": [
+    {
+      "date": "January 2024 - September 2024",
+      "title": "Product Engineer & Web Developer",
+      "company": "Güil Mobility Ventures",
+      "description": "Transformed the prototyping process for a venture studio, developed a waste management app MVP reviewed by 3 major companies, and led the development of a fintech solution providing credit access to 400+ app-based drivers by migrating from Webflow to Nuxt and implementing a scoring system.",
+      "link": "https://guilventures.com"
+    },
+    {
+      "date": "August 2022 - January 2024",
+      "title": "Web Developer",
+      "company": "OOQIA",
+      "description": "Developed solutions for 4 projects, created a comprehensive UI for a U.S.-based client, defined API schemas, and led a team of 5 developers to ensure WCAG 2.0 compliance for a website with 100+ pages while optimizing an admin e-commerce site.",
+      "link": "https://ooqia.com/"
+    },
+    {
+      "date": "September 2021 - August 2022",
+      "title": "Web Developer",
+      "company": "Olly Olly",
+      "description": "Managed the development and support for over 1,000 clients, developing WordPress themes and streamlining theme deployment, reducing production time by 66%. Implemented Scrum Agile, reducing resolution time from 6 days to 1 day, and automated change log communication.",
+      "link": "https://www.ollyolly.com/"
+    },
+    {
+      "date": "September 2020 - August 2021",
+      "title": "Network Operation Center Technician & Database Administrator",
+      "company": "GBM",
+      "description": "Monitored infrastructure applications, servers, and databases, improving operational processes for the NOC and working with ticketing and monitoring systems. Completed courses in SQL Server, DB2, Linux, and Windows Server."
+    },
+    {
+      "date": "September 2019 - March 2020",
+      "title": "Recruitment & Operations Intern",
+      "company": "Landterra",
+      "description": "Accomplished weekly recruiting goals, conducted phone screens and interviews, and implemented a software that enhanced phone screen efficiency, reducing time per call."
+    }
+  ],
+ "volunteering": [
+    {
+      "date": "July 2023 - Present",
+      "title": "Vice-Curator, Funding Officer & Shaper",
+      "company": "Global Shapers, Managua Hub",
+      "description": "Empowered individuals through guidance on project execution, managing logistics such as fundraising, recruiting, and fostering internal culture. Built a website for external communication and represented the organization at international events. Co-managed the 'Mi Futuro' project, providing vocational guidance to over 400 students in underrepresented communities through mentorship connections, personality and vocational tests, and scholarship information, while overseeing fundraising and scheduling logistics.",
+      "link": "https://www.shapersmanagua.org/"
+    },
+    {
+      "date": "July 2023 - Present",
+      "title": "Organizer",
+      "company": "Google Developer Groups (GDG), Managua",
+      "description": "Promoted inclusivity in tech for a community of 900+ members through events like 'DevFest,' which attracted over 200 attendees. Managed event organization, fundraising, and strategic alliances while producing audiovisual content for social media and collaborating with 'Women Techmakers' to support female participation in technology.",
+      "link": "https://gdg.community.dev/gdg-managua/"
+    }
+  ]
+}
