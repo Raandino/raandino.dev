@@ -64,7 +64,7 @@ const modalId = `progress-modal-${title.replace(/\s+/g, "-").toLowerCase()}`;
       id={modalId}
       tabindex="-1"
       aria-hidden="true"
-      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full bg-black/10 backdrop-blur-sm duration-300"
+      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-dvh max-h-full bg-black/10 backdrop-blur-sm duration-300"
     >
       <div class="relative p-4 w-full max-w-md max-h-full">
         <!-- Modal content -->
@@ -107,12 +107,15 @@ const modalId = `progress-modal-${title.replace(/\s+/g, "-").toLowerCase()}`;
 
 <script lang="js">
   document.addEventListener("DOMContentLoaded", () => {
+    const body = document.querySelector("body");
     // Function to open modal
     const openModal = (modalId) => {
       const modal = document.getElementById(modalId);
+
       if (modal) {
         modal.classList.remove("hidden");
         modal.classList.add("flex");
+        body.classList.add("overflow-hidden");
         modal.setAttribute("aria-hidden", "false");
       }
     };
@@ -122,6 +125,7 @@ const modalId = `progress-modal-${title.replace(/\s+/g, "-").toLowerCase()}`;
       const modal = document.getElementById(modalId);
       if (modal) {
         modal.classList.add("hidden");
+        body.classList.remove("overflow-hidden");
         modal.setAttribute("aria-hidden", "true");
       }
     };
