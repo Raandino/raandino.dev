@@ -5,49 +5,56 @@
       "title": "Product Engineer & Web Developer",
       "company": "Güil Mobility Ventures",
       "description": "Transformed the prototyping process for a venture studio, developed a waste management app MVP reviewed by 3 major companies, and led the development of a fintech solution providing credit access to 400+ app-based drivers by migrating from Webflow to Nuxt and implementing a scoring system.",
-      "link": "https://guilventures.com"
+      "link": "https://guilventures.com",
+      "excerpt": "Transformed prototyping for a venture studio, developed a waste management MVP, and led a fintech solution for 400+ drivers by migrating from Webflow to Nuxt."
     },
     {
       "date": "August 2022 - January 2024",
       "title": "Web Developer",
       "company": "OOQIA",
       "description": "Developed solutions for 4 projects, created a comprehensive UI for a U.S.-based client, defined API schemas, and led a team of 5 developers to ensure WCAG 2.0 compliance for a website with 100+ pages while optimizing an admin e-commerce site.",
-      "link": "https://ooqia.com/"
+      "link": "https://ooqia.com/",
+      "excerpt": "Created UI for a U.S. client, led a team ensuring WCAG 2.0 compliance for a 100+ page site, and optimized an admin e-commerce platform."
     },
     {
       "date": "September 2021 - August 2022",
       "title": "Web Developer",
       "company": "Olly Olly",
       "description": "Managed the development and support for over 1,000 clients, developing WordPress themes and streamlining theme deployment, reducing production time by 66%. Implemented Scrum Agile, reducing resolution time from 6 days to 1 day, and automated change log communication.",
-      "link": "https://www.ollyolly.com/"
+      "link": "https://www.ollyolly.com/",
+      "excerpt": "Developed WordPress themes for 1K+ clients, streamlined deployment, reduced production time by 66%, and automated change log communication."
     },
     {
       "date": "September 2020 - August 2021",
       "title": "Network Operation Center Technician & Database Administrator",
       "company": "GBM",
-      "description": "Monitored infrastructure applications, servers, and databases, improving operational processes for the NOC and working with ticketing and monitoring systems. Completed courses in SQL Server, DB2, Linux, and Windows Server."
+      "description": "Monitored infrastructure applications, servers, and databases, improving operational processes for the NOC and working with ticketing and monitoring systems. Completed courses in SQL Server, DB2, Linux, and Windows Server.",
+      "excerpt": "Monitored infrastructure apps, servers, databases, and improved NOC operational processes, working with ticketing and monitoring systems."
     },
     {
       "date": "September 2019 - March 2020",
       "title": "Recruitment & Operations Intern",
       "company": "Landterra",
-      "description": "Accomplished weekly recruiting goals, conducted phone screens and interviews, and implemented a software that enhanced phone screen efficiency, reducing time per call."
+      "description": "Accomplished weekly recruiting goals, conducted phone screens and interviews, and implemented a software that enhanced phone screen efficiency, reducing time per call.",
+      "excerpt": "Accomplished weekly recruiting goals, improved phone screen efficiency by implementing software, reducing time per call."
     }
   ],
- "volunteering": [
+  "volunteering": [
     {
       "date": "July 2023 - Present",
       "title": "Vice-Curator, Funding Officer & Shaper",
       "company": "Global Shapers, Managua Hub",
       "description": "Empowered individuals through guidance on project execution, managing logistics such as fundraising, recruiting, and fostering internal culture. Built a website for external communication and represented the organization at international events. Co-managed the 'Mi Futuro' project, providing vocational guidance to over 400 students in underrepresented communities through mentorship connections, personality and vocational tests, and scholarship information, while overseeing fundraising and scheduling logistics.",
-      "link": "https://www.shapersmanagua.org/"
+      "link": "https://www.shapersmanagua.org/",
+      "excerpt": "Empowered individuals through project guidance, logistics, fundraising, and recruiting. Co-managed 'Mi Futuro' and built a website for external communication."
     },
     {
       "date": "July 2023 - Present",
       "title": "Organizer",
       "company": "Google Developer Groups (GDG), Managua",
       "description": "Promoted inclusivity in tech for a community of 900+ members through events like 'DevFest,' which attracted over 200 attendees. Managed event organization, fundraising, and strategic alliances while producing audiovisual content for social media and collaborating with 'Women Techmakers' to support female participation in technology.",
-      "link": "https://gdg.community.dev/gdg-managua/"
+      "link": "https://gdg.community.dev/gdg-managua/",
+      "excerpt": "Promoted inclusivity in tech for 900+ members via events like 'DevFest.' Managed event organization, fundraising, and collaborations with 'Women Techmakers.'"
     }
   ]
 }

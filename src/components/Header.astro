@@ -3,24 +3,24 @@ const navItems = [
   {
     title: "Experience",
     label: "experience",
-    url: "/#experiencia",
+    url: "/#experience",
   },
   {
     title: "Projects",
     label: "Projects",
-    url: "/#proyectos",
+    url: "/#projects",
   },
   {
     title: "About me",
     label: "about-me",
-    url: "/#sobre-mi",
+    url: "/#about",
   },
   {
     title: "Contact",
     label: "contact",
-    url: "mailto:miduga@gmail.com",
+    url: "https://www.linkedin.com/in/rodolfoandino/",
   },
-]
+];
 ---
 
 <header
@@ -32,7 +32,7 @@ const navItems = [
     {
       navItems.map((link) => (
         <a
-          class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500"
+          class="relative block px-2 py-2 transition hover:text-blue-500 "
           aria-label={link.label}
           href={link.url}
         >
@@ -40,66 +40,69 @@ const navItems = [
         </a>
       ))
     }
-
   </nav>
 </header>
 
 <script>
-   const getThemePreference = () => {
+  const getThemePreference = () => {
     if (typeof localStorage !== "undefined") {
-      return localStorage.getItem("theme") ?? "dark";  // Default theme is now "dark"
+      return localStorage.getItem("theme") ?? "dark"; // Default theme is now "dark"
     }
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
   };
 
   const updateTheme = () => {
     const themePreference = getThemePreference();
-    const isDark = themePreference === "dark" || 
-                   (themePreference === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    const isDark =
+      themePreference === "dark" ||
+      (themePreference === "system" &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches);
 
     document.documentElement.classList[isDark ? "add" : "remove"]("dark");
   };
 
   document.addEventListener("astro:page-load", () => {
     updateTheme();
-    const sections = document.querySelectorAll("section")
-    const navItems = document.querySelectorAll("header nav a")
+    const sections = document.querySelectorAll("section");
+    const navItems = document.querySelectorAll("header nav a");
 
     const callback = (entries: any[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
             if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-blue-500")
+              item.classList.add("text-blue-500");
             } else {
-              item.classList.remove("text-blue-500")
+              item.classList.remove("text-blue-500");
             }
-          })
+          });
         }
-      })
-    }
+      });
+    };
 
     const observer = new IntersectionObserver(callback, {
       root: null,
       rootMargin: "0px",
       threshold: 0.3,
-    })
+    });
 
     sections.forEach((section) => {
-      observer.observe(section)
-    })
+      observer.observe(section);
+    });
 
     // Cleanup function
     document.onvisibilitychange = () => {
       if (document.visibilityState === "hidden") {
-        observer.disconnect()
+        observer.disconnect();
       } else {
         sections.forEach((section) => {
-          observer.observe(section)
-        })
+          observer.observe(section);
+        });
       }
-    }
-  })
+    };
+  });
 </script>
 
 <style>

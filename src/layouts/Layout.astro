@@ -1,16 +1,16 @@
 ---
-import "@fontsource-variable/onest"
+import "@fontsource-variable/onest";
 
-import Header from "../components/Header.astro"
-import Footer from "../components/Footer.astro"
-import { ViewTransitions } from "astro:transitions"
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
-  title: string
-  description: string
+  title: string;
+  description: string;
 }
 
-const { description, title } = Astro.props
+const { description, title } = Astro.props;
 ---
 
 <!doctype html>
@@ -24,11 +24,13 @@ const { description, title } = Astro.props
     <meta property="og:image" content="/og.webp" />
     <title>{title}</title>
     <ViewTransitions />
-    
   </head>
 
   <body class="relative text-black dark:text-white">
-    <div class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"></div>
+    <div
+      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"
+    >
+    </div>
     <Header />
     <slot />
     <Footer />

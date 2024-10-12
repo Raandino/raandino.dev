@@ -1,20 +1,17 @@
 ---
-import ExperienceItem from "./ExperienceItem.astro"
+import ExperienceItem from "./ExperienceItem.astro";
 
 interface Props {
-	EXPERIENCE:
-   {
+  EXPERIENCE: {
     date: string;
     title: string;
     company: string;
     description: string;
+    excerpt: string;
     link: string;
-   }[]
-  
-
+  }[];
 }
-const { EXPERIENCE } = Astro.props
-
+const { EXPERIENCE } = Astro.props;
 ---
 
 <ol class="relative mt-16">
