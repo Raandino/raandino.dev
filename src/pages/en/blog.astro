@@ -11,7 +11,7 @@ import Projects from "@/components/Projects.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 import Hero from "@/components/Hero.astro";
 import TitleSection from "@/components/TitleSection.astro";
-import experience from "../experience.json";
+
 import Technologies from "@/components/Technologies.astro";
 ---
 
@@ -19,5 +19,9 @@ import Technologies from "@/components/Technologies.astro";
   title="Rodolfo Andino's Portfolio - Web Developer with 4 Years of Experience"
   description="Hire Rodolfo to build your web application. Web Developer and Content Creator. Specialized in creating unique interfaces."
 >
-  Hey!
+  <main class="px-4">
+    <SectionContainer class="py-16 md:py-36">
+      <Hero />
+    </SectionContainer>
+  </main>
 </Layout>

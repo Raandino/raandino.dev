@@ -1,0 +1,120 @@
+---
+import LanguageIcon from "./icons/Language.astro";
+import EnglishIcon from "./icons/English.astro";
+import SpanishIcon from "./icons/Spanish.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div class="relative ml-1 mr-1">
+  <button
+    transition:persist
+    id="lang-toggle-btn"
+    class="appearance-none border-none flex hover:scale-125 transition"
+  >
+    <span class="sr-only">{t("nav.lang.screen-reader")}</span>
+    <EnglishIcon
+      id="english-icon"
+      class="lang-toggle-icon size-5 transition-all hidden"
+    />
+    <SpanishIcon
+      id="spanish-icon"
+      class="lang-toggle-icon size-5 transition-all hidden"
+    />
+    <LanguageIcon
+      id="language-icon"
+      class="lang-toggle-icon size-5 transition-all"
+    />
+  </button>
+  <div
+    transition:persist
+    id="lang-menu"
+    class="absolute hidden scale-80 top-8 right-0 text-sm p-1 min-w-[8rem] rounded-md border bg-gray-900/90 border-gray-500/20 shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-md"
+  >
+    <ul>
+      <li
+        class="lang-menu-option px-2 py-1.5 cursor-pointer hover:bg-gray-500/50 rounded-sm"
+        data-lang="en"
+      >
+        {t("nav.lang.english")}
+      </li>
+      <li
+        class="lang-menu-option px-2 py-1.5 cursor-pointer hover:bg-gray-500/50 rounded-sm"
+        data-lang="es"
+      >
+        {t("nav.lang.spanish")}
+      </li>
+    </ul>
+  </div>
+</div>
+
+<style>
+  #lang-menu.open {
+    display: inline;
+    animation: scale-up-center 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  @keyframes scale-up-center {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+</style>
+
+<script is:inline>
+  const langMenu = document.getElementById("lang-menu");
+  const languageIcon = document.getElementById("language-icon");
+  const englishIcon = document.getElementById("english-icon");
+  const spanishIcon = document.getElementById("spanish-icon");
+
+  const updateIcon = (selectedLang) => {
+    languageIcon.classList.add("hidden");
+    englishIcon.classList.add("hidden");
+    spanishIcon.classList.add("hidden");
+
+    if (selectedLang === "en") {
+      englishIcon.classList.remove("hidden");
+    } else if (selectedLang === "es") {
+      spanishIcon.classList.remove("hidden");
+    } else {
+      languageIcon.classList.remove("hidden");
+    }
+  };
+
+  // Initialize icon based on current language
+  const currentLang = window.location.pathname.includes("/es") ? "es" : "en";
+  updateIcon(currentLang);
+
+  document.addEventListener("click", () => langMenu.classList.remove("open"));
+
+  document.getElementById("lang-toggle-btn").addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isClosed = !langMenu.classList.contains("open");
+    langMenu.classList[isClosed ? "add" : "remove"]("open");
+  });
+
+  document.querySelectorAll(".lang-menu-option").forEach((element) => {
+    element.addEventListener("click", (e) => {
+      const selectedLang = e.target.getAttribute("data-lang");
+
+      // Update icon based on the selected language
+      updateIcon(selectedLang);
+
+      // Redirect to the selected language's URL
+      const currentUrl = window.location.pathname;
+      const newUrl = `/${selectedLang}` + currentUrl.replace(/^\/(en|es)/, "");
+      window.location.href = newUrl;
+    });
+  });
+</script>

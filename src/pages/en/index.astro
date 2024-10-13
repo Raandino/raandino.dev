@@ -1,0 +1,88 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+import AboutMe from "@/components/AboutMe.astro";
+import Briefcase from "@/components/icons/Briefcase.astro";
+import Community from "@/components/icons/Community.astro";
+import CodeIcon from "@/components/icons/Code.astro";
+import Experience from "@/components/Experience.astro";
+import ProfileCheck from "@/components/icons/ProfileCheck.astro";
+import Projects from "@/components/Projects.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Hero from "@/components/Hero.astro";
+import TitleSection from "@/components/TitleSection.astro";
+import experience from "@/experience.json";
+import Technologies from "@/components/Technologies.astro";
+import SocialPill from "@/components/SocialPill.astro";
+import LinkedInIcon from "@/components/icons/LinkedIn.astro";
+---
+
+<Layout
+  title="Rodolfo Andino's Portfolio - Web Developer with 4+ Years of Experience"
+  description="Hire Rodolfo to build your web application. Web Developer and Content Creator. Specialized in creating unique interfaces."
+>
+  <main class="px-4">
+    <SectionContainer class="py-16 md:py-36">
+      <Hero
+        title="Hey, I'm Rodolfo"
+        subtitle="Software Engineer and Content Creator"
+        description="4+ years of experience in Front-end web dev, automation & docs. Global Shaper. Driving community-led tech projects from Nicaragua 🇳🇮 Passionate about using tech for positive change."
+        badgeText="Available for work"
+        imgUrl="/rodolfo.webp"
+        imgAlt="Rodolfo Andino profile picture"
+      >
+        <SocialPill href="https://linkedin.com/in/rodolfoandino">
+          <LinkedInIcon class="size-4" />
+          Contact me
+        </SocialPill>
+      </Hero>
+    </SectionContainer>
+  </main>
+  <div class="space-y-24 px-4">
+    <SectionContainer id="experience">
+      <TitleSection>
+        <Briefcase class="size-8" />
+        Work Experience
+      </TitleSection>
+      <Experience
+        EXPERIENCE={experience.work_experience.map((exp) => ({
+          ...exp,
+          link: exp.link || "",
+        }))}
+      />
+    </SectionContainer>
+    <SectionContainer id="experience">
+      <TitleSection>
+        <Community class="size-8" />
+        Volunteering
+      </TitleSection>
+      <Experience EXPERIENCE={experience.volunteering} />
+    </SectionContainer>
+
+    <SectionContainer id="projects">
+      <TitleSection>
+        <CodeIcon class="size-7" />
+        Projects
+      </TitleSection>
+      <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="about">
+      <TitleSection>
+        <ProfileCheck class="size-8" />
+        About Me
+      </TitleSection>
+      <AboutMe />
+    </SectionContainer>
+
+    <SectionContainer id="Tecnologias">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-white"
+      >
+        <CodeIcon class="size-7" />
+        Technologies
+      </h2>
+      <Technologies />
+    </SectionContainer>
+  </div>
+</Layout>

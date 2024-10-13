@@ -1,109 +1,48 @@
 ---
-const navItems = [
-  {
-    title: "Experience",
-    label: "experience",
-    url: "/#experience",
-  },
-  {
-    title: "Projects",
-    label: "Projects",
-    url: "/#projects",
-  },
-  {
-    title: "About me",
-    label: "about-me",
-    url: "/#about",
-  },
-  {
-    title: "Contact",
-    label: "contact",
-    url: "https://www.linkedin.com/in/rodolfoandino/",
-  },
-];
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import LanguageToggle from "./LanguageToggle.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 ---
 
 <header
   class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
 >
   <nav
-    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
+    class="flex px-3 text-sm font-medium rounded-full text-gray-200 justify-center items-center"
   >
     {
-      navItems.map((link) => (
+      (
         <a
           class="relative block px-2 py-2 transition hover:text-blue-500 "
-          aria-label={link.label}
-          href={link.url}
+          aria-label="Home"
+          href={`/${lang}/`}
         >
-          {link.title}
+          {t(`nav.home`)}
         </a>
-      ))
+        <a
+          class="relative block px-2 py-2 transition hover:text-blue-500 "
+          aria-label="Home"
+          href={`/${lang}/home`}
+        >
+          {t(`nav.about`)}
+        </a>
+        <a
+          class="relative block px-2 py-2 transition hover:text-blue-500 "
+          aria-label="Home"
+          href={`/${lang}/blog`}
+        >
+          {t(`nav.blog`)}
+        </a>
+      )
     }
+    <LanguageToggle />
   </nav>
 </header>
 
-<script>
-  const getThemePreference = () => {
-    if (typeof localStorage !== "undefined") {
-      return localStorage.getItem("theme") ?? "dark"; // Default theme is now "dark"
-    }
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-  };
 
-  const updateTheme = () => {
-    const themePreference = getThemePreference();
-    const isDark =
-      themePreference === "dark" ||
-      (themePreference === "system" &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches);
-
-    document.documentElement.classList[isDark ? "add" : "remove"]("dark");
-  };
-
-  document.addEventListener("astro:page-load", () => {
-    updateTheme();
-    const sections = document.querySelectorAll("section");
-    const navItems = document.querySelectorAll("header nav a");
-
-    const callback = (entries: any[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          navItems.forEach((item) => {
-            if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-blue-500");
-            } else {
-              item.classList.remove("text-blue-500");
-            }
-          });
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(callback, {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.3,
-    });
-
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
-
-    // Cleanup function
-    document.onvisibilitychange = () => {
-      if (document.visibilityState === "hidden") {
-        observer.disconnect();
-      } else {
-        sections.forEach((section) => {
-          observer.observe(section);
-        });
-      }
-    };
-  });
-</script>
 
 <style>
   nav {
@@ -113,12 +52,12 @@ const navItems = [
   }
 
   nav {
-    @apply dark:bg-gray-800/90 bg-white/50;
+    @apply bg-gray-800/90 ;
   }
 
   @keyframes nav-shadown {
     0% {
-      @apply dark:bg-gray-800/0 bg-white/0;
+      @apply bg-gray-800/0;
     }
     to {
       @apply shadow-lg ring-1 backdrop-blur ring-white/10;
